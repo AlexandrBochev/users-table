@@ -44,14 +44,13 @@ export const HairColorIcon = styled.div<{ color: string }>`
   background-color: ${props => hairColorCode(props.color)};
 `
 
-const hairColorCode = (color: string) => {
-  if (color === "Blond") {
-    return "#faf0be"
-  } else if (color === "Brown") {
-    return "#af593e"
-  } else if (color === "Chestnut") {
-    return "#bdaa8d"
-  } else if (color === "Auburn") {
-    return "#9d3e0c"
-  } else return "#000000"
+const hairColorCode = (color: string): string => {
+  const hairColor: { [key: string]: string } = {
+    Blond: "#faf0be",
+    Brown: "#af593e",
+    Chestnut: "#bdaa8d",
+    Auburn: "#9d3e0c",
+    Black: "#000000"
+  }
+  return hairColor[color];
 }
